@@ -181,9 +181,9 @@ function eachLanguaguesFrameWork(layer, isLang, callbackView = viewCard, paramVi
 
 /**
  * Each data fetch become a inner on Dom element
- * @param {array} allSkills 
- * @param {string} elm 
- * @param {Function} callback 
+ * @param {array} allSkills datas
+ * @param {string} elm Element (selectors)
+ * @param {Function} callback obtional
  */
 function eachData(allSkills, elm, callback = viewCard, paramViewCardClassName = null) {
     let chaine = "";
