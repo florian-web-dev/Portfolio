@@ -277,7 +277,7 @@ const datas = {
             "imgUrl": "",
             "subtitle": "Projet site E-commerce, vanilla",
             "context": "Développeur Web Web Mobil",
-            "linkGit": "https://github.com/florian-web-dev/Cont",
+            "linkGit": "https://github.com/florian-web-dev/cookieItEasy",
             "bataBase": "MariaDB",
             "mimeFileDataBase": "svg",
             "sizeFileDataBase": "5rem",
@@ -344,12 +344,12 @@ const datas = {
             "imgUrl": "",
             "subtitle": "Plusieurs projet Vuejs/Adroid/ionic",
             "context": "Concepteur Développeur Application et Autodidacte",
-            "linkGit": "",
+            "linkGit": "https://gitlab.com/floriangtmegmail/Bomber",
             "bataBase": "no-database",
             "mimeFileDataBase": "svg",
             "sizeFileDataBase": "3rem",
             "templateProces": "",
-            "content": `<b>Objectif</b>: Réaliser une 'bombe' avec VusJs, le but est de désamorcer la bombe avant la fin du décompte, <a href='https://gitlab.com/floriangtmegmail/Bomber' target='_blank' rel='noopener noreferrer'>Lien du dépôt GitLab</a>. 
+            "content": `<b>Objectif</b>: Réaliser une 'bombe' avec VusJs, le but est de désamorcer la bombe avant la fin du décompte.
             <b>Objectif</b>: Réaliser un quiz sur android. 
             <b>Objectif</b>: Réaliser une liste de souvenirs avec photo`,
             "language": [

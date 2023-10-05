@@ -3,6 +3,7 @@ const titleProjetRealiz = document.querySelector('#title-projet-realiz')
 const tableTdLanguage = document.querySelector('#table-td-language')
 const tableTdFramwork = document.querySelector('#table-td-framework')
 const tableTdSgbd = document.querySelector('#table-td-sgbd')
+const tableTdGitLink = document.querySelector('#table-td-gitLink')
 
 
 const divRealizDiagrame = document.querySelector('#div-realiz-diagrame')
@@ -11,12 +12,24 @@ const idBtnRealize = document.querySelector('#divBtnRealize')
 const listBtnShowRealiz = document.querySelectorAll('.btn-show-realiz')
 
 
-function viewAchievementTableImg(folderImg, data, minefile, dataSize) {
+function viewAchievementTable(typeData, folderImg, data, minefile, dataSize) {
 
-    return `
+    // console.log(typeData);
+    // console.log(data);
+    if (typeData === "link") {
+        // folderImg = null;
+        // minefile = null;
+        // dataSize = null;
+        return `<a href="${data}" target="_blank" rel="noopener noreferrer">lien depo git</a>`
+    }
+    if (typeData === "img") {
+        return `
         <img class="m-3" src="../public/img/${folderImg}/${data}.${minefile}" alt="${data}" title="${data}"
         style="width: ${dataSize};">
     `
+    }
+
+
 }
 
 function viewAchievDiagram(data) {
@@ -34,6 +47,8 @@ function viewAchievDiagram(data) {
 // function viewBtnRealiz(data) {
 //     return `<button class="btn-show-realiz">${data.title}</button>`
 // }
+
+
 
 
 
@@ -63,7 +78,7 @@ function eachDataRender(datas, cookieValue) {
 
             element.language.forEach(el => {
                 // console.log(el.name);
-                chaine += viewAchievementTableImg('language', el.name, 'svg', '3rem');
+                chaine += viewAchievementTable('img', 'language', el.name, 'svg', '3rem');
                 if (null != tableTdLanguage) {
                     tableTdLanguage.innerHTML = chaine
                 }
@@ -73,7 +88,7 @@ function eachDataRender(datas, cookieValue) {
 
             element.frameWork.forEach(el => {
                 // console.log(el.name);
-                chaine2 += viewAchievementTableImg('framework', el.name, 'svg', el.sizeImg);
+                chaine2 += viewAchievementTable('img', 'framework', el.name, 'svg', el.sizeImg);
                 if (null != tableTdFramwork) {
                     tableTdFramwork.innerHTML = chaine2
                 }
@@ -90,8 +105,14 @@ function eachDataRender(datas, cookieValue) {
             });
 
             // console.log(element.bataBase);
-            if (null != tableTdSgbd)
-                tableTdSgbd.innerHTML = viewAchievementTableImg('sgbd', element.bataBase, element.mimeFileDataBase, element.sizeFileDataBase);
+            if (null != tableTdSgbd) {
+                tableTdSgbd.innerHTML = viewAchievementTable('img', 'sgbd', element.bataBase, element.mimeFileDataBase, element.sizeFileDataBase);
+            }
+
+            if (null != tableTdGitLink) {
+                console.log(element);
+                tableTdGitLink.innerHTML = viewAchievementTable('link', null, element.linkGit, null, null)
+            }
 
 
         }
