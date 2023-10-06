@@ -12,15 +12,12 @@ const idBtnRealize = document.querySelector('#divBtnRealize')
 const listBtnShowRealiz = document.querySelectorAll('.btn-show-realiz')
 
 
-function viewAchievementTable(typeData, folderImg, data, minefile, dataSize) {
+function viewAchievementTable(typeData, data, folderImg, minefile, dataSize) {
 
-    // console.log(typeData);
-    // console.log(data);
     if (typeData === "link") {
-        // folderImg = null;
-        // minefile = null;
-        // dataSize = null;
-        return `<a href="${data}" target="_blank" rel="noopener noreferrer">lien depo git</a>`
+    
+        return `<a href="${data}" target="_blank" rel="noopener noreferrer">Repositorie</a>`
+
     }
     if (typeData === "img") {
         return `
@@ -78,17 +75,16 @@ function eachDataRender(datas, cookieValue) {
 
             element.language.forEach(el => {
                 // console.log(el.name);
-                chaine += viewAchievementTable('img', 'language', el.name, 'svg', '3rem');
+                chaine += viewAchievementTable('img', el.name, 'language', 'svg', '3rem');
                 if (null != tableTdLanguage) {
                     tableTdLanguage.innerHTML = chaine
                 }
 
             });
 
-
             element.frameWork.forEach(el => {
                 // console.log(el.name);
-                chaine2 += viewAchievementTable('img', 'framework', el.name, 'svg', el.sizeImg);
+                chaine2 += viewAchievementTable('img', el.name, 'framework', 'svg', el.sizeImg);
                 if (null != tableTdFramwork) {
                     tableTdFramwork.innerHTML = chaine2
                 }
@@ -106,12 +102,12 @@ function eachDataRender(datas, cookieValue) {
 
             // console.log(element.bataBase);
             if (null != tableTdSgbd) {
-                tableTdSgbd.innerHTML = viewAchievementTable('img', 'sgbd', element.bataBase, element.mimeFileDataBase, element.sizeFileDataBase);
+                tableTdSgbd.innerHTML = viewAchievementTable('img', element.bataBase, 'sgbd', element.mimeFileDataBase, element.sizeFileDataBase);
             }
 
             if (null != tableTdGitLink) {
                 console.log(element);
-                tableTdGitLink.innerHTML = viewAchievementTable('link', null, element.linkGit, null, null)
+                tableTdGitLink.innerHTML = viewAchievementTable('link', element.linkGit, null, null, null)
             }
 
 

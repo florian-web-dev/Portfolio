@@ -638,9 +638,7 @@ details[open] {
         margin: auto;
     }
 
-    /* .div-skills-fram-back{
-        padding:1rem;
-    } */
+
 
 }
 
@@ -671,7 +669,7 @@ details[open] {
 }
 
 @media (width <=900px) {
-    .div-skills-fram-back {
+    .div-skills-responsive {
         flex-direction: column;
     }
 
