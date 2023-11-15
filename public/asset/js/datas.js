@@ -264,8 +264,8 @@ const datas = {
                     "id": 4,
                     "figcaption": "Diagramme de classe.",
                     "nameFile": "classe.png",
-                    "imgMiniUrl": "../public/img/realisation/suivie_seance/classe.png",
-                    "imgUrl": "../public/img/realisation/suivie_seance/classe.png",
+                    "imgMiniUrl": "../public/img/realisation/suivie_seance/Classe.png",
+                    "imgUrl": "../public/img/realisation/suivie_seance/Classe.png",
                     "caption": "<b>Diagrammes de classe </b> <br/> Projet suivi séance."
                 }
             ]
