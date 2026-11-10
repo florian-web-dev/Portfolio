@@ -1,6 +1,7 @@
 
 const idSectionLangFront = document.querySelector("#langFront");
 const idSectionLangBack = document.querySelector("#langBack");
+
 const idSectionFramFront = document.querySelector("#framFront");
 const idSectionFramBack = document.querySelector("#framBack");
 
@@ -10,35 +11,25 @@ const idSectionCms = document.querySelector("#cms")
 const idSectionTools = document.querySelector("#tools")
 const idSectionUml = document.querySelector("#uml")
 
-
 const idFormationDw = document.querySelector('#formationDw');
 const idFormationCda = document.querySelector('#formationCda');
 
-
 const showProgress = document.querySelectorAll("[class*='showProgress-']")
-
 
 const achievementShow = document.querySelector('#achievementShow');
 
 
 // _______________________________________
-// ---------------- skills --------------
+// ---------------- Datas --------------
 const skills = datas.skills
-
 const languages = skills.language;
-
 const framework = skills.framework;
 
-// const mobil = skills.mobil;
-
-// const tools = skills.tools;
-
-// const analyse = skills.analyse;
-
-// const cms = skills.cms;
-// _______________________________________
 // ---------------- realisation ---------------
 const realiz = datas.realisation;
+
+// _______________________________________
+
 
 
 function viewCardProgress(data) {
@@ -98,7 +89,7 @@ function viewCard(data, className = null) {
 
     `;
 }
-//  
+
 function viewFormation(data) {
     return `
     <h6><u>Titre professionnel :</u> <strong title="${data.titre}"> ${data.titre}</strong></h6>
@@ -120,7 +111,6 @@ function viewList(data) {
     `
 }
 
-
 function viewList2(data) {
     return `
 
@@ -130,16 +120,23 @@ function viewList2(data) {
 
 
 function viewAchiev(data) {
+    let imgUrl =""
+    if (data.imgUrl == "") {
+        imgUrl = "public/img/noir.jpg"
+
+    }else{
+        imgUrl = data.imgUrl
+    }
+
     return `
     <div class="div-card-achiev">
         <div class="card-achiev">
-            <img src="public/img/noir.jpg" alt="Projet Suivi Séance" class="w-100 rounded" />
+            <img src="${imgUrl}" alt="${data.title}" class="w-100 rounded" style="height: 35vh;" />
             <div class="fadedbox">
                 <div class="card-body-achiev">
                     <h5 class="title-fade">${data.title}</h5>
                     <p title="Concepteur Développeur Application">${data.subtitle}</p>
-                    <a href="./pages/realisation.html" onauxclick="addCookie('${data.title}')" onclick="addCookie('${data.title}')"
-                        class="btn-card" target="_blank" rel="noopener noreferrer">Voire plus</a>
+                    <a href="./pages/realisation.html" title="${data.title}" class="btn-card cookieClass" target="_blank" rel="noopener noreferrer">Voire plus</a>
                 </div>
 
             </div>
@@ -224,8 +221,6 @@ function eachDataForshow(skillsObj, param) {
 
     if (null != skillsObj) {
         for (const [key, value] of Object.entries(skillsObj)) {
-            // console.log(`${key}: ${value}`);
-            // console.log(value);
 
             checkDataByKeyObj(key, value)
         }

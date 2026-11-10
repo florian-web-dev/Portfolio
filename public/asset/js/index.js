@@ -1,15 +1,13 @@
 
 // ------------- Ici JavaScript
 
-const display = document.querySelectorAll('.display');
+
 
 const pcDisplay = document.querySelector('.pcDisplay');
 const smartDisplay = document.querySelector('.smartDisplay');
 
 
 const responsive = document.getElementById('responsive');
-
-
 
 
 // ---------------------------- ifTrueNone ---------------------------------
@@ -164,18 +162,114 @@ function addCookie(value) {
     document.cookie = `${KEY}=${value};path=/;expires=${date};SameSite=lax;Secure`
 
     // console.log(document.cookie);
+}
+
+
+
+const htmlCollectionHref = document.getElementsByClassName("cookieClass")
+console.log(htmlCollectionHref);
+
+window.addEventListener('load', () => {
+    console.log('La page est complètement chargée load Bob');
+
+    for (let i = 0; i < htmlCollectionHref.length; i++) {
+
+        // const element = htmlCollectionHref.item(i)
+        // console.log(element);
+
+        // console.log(htmlCollectionHref.item(i));
+        htmlCollectionHref.item(i).addEventListener('click', (e) => {
+            addCookie(e.target.title)
+            console.log(e.target.title);
+
+        })
+
+    }
+})
+
+
+/**
+ * Ajoute un élément à un parent avec des attributs spécifiques.
+ * @param {string} parentSelector - Sélecteur CSS du parent.
+ * @param {string} elementType - Type de balise (ex. 'div', 'span', etc.).
+ * @param {string} className - Classe à attribuer à l'élément.
+ * @param {string} titleAttribute - Valeur de l'attribut 'title'.
+ * @param {string} textContent - Contenu texte de l'élément.
+ */
+function addElement(parentSelector, elementType, className, textContent, titleAttribute = null) {
+    const parentElement = document.querySelector(parentSelector);
+
+
+    console.log(parentElement);
+
+    if (!parentElement) {
+        console.error(`Parent element with selector '${parentSelector}' not found. bob`);
+        return;
+    }
+
+    const newElement = document.createElement(elementType);
+    newElement.className = className;
+    if (titleAttribute !== null) {
+        newElement.title = titleAttribute;
+    }
+
+    const textNode = document.createTextNode(textContent);
+    newElement.appendChild(textNode);
+
+    parentElement.appendChild(newElement);
+}
+
+/**
+ * Affiche un toast avec un message donné.
+ * @param {string} parentSelector - Sélecteur CSS du parent.
+ * @param {string} message - Message à afficher dans le toast.
+ * @param {string} className - Classe à attribuer à l'élément.
+ */
+function showToast(parentSelector, toastClassName, message) {
+
+    addElement(parentSelector, 'div', toastClassName, message, null);
+
+    // Affiche le toast
+    const toast = document.querySelector(`${parentSelector} .${toastClassName}`);
+
+    if (toast) {
+        toast.style.display = 'block';
+
+        // Cache le toast après 4 secondes (4000 millisecondes)
+        setTimeout(function () {
+            toast.style.display = 'none';
+        }, 4000);
+    } else {
+        console.error(`Toast element with class '${toastClassName}' not found.`);
+    }
 
 }
 
 
+
+// let toast2 = document.querySelector("#test");
+// toast2.addEventListener('click', (e) =>{
+
+//     console.log(e);
+//     showToast("#toast", 'toast-info', 'Teste')
+// })
+// console.log(toast2);
+
+// 
+
+
 reveal()
 
+function onResizeReport() {
 
-display.forEach((e) => {
-    e.addEventListener('resize', window.onresize = reportWindowSize)
-})
+    const isDisplay = document.querySelectorAll('.display');
+    isDisplay.forEach((e) => {
+        e.addEventListener('resize', window.onresize = reportWindowSize)
+        console.log("bob display");
 
-
+    })
+}
+onResizeReport()
 ifTrueNone(navbarSupportedContent, topelm);
 
 

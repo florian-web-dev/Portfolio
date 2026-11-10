@@ -8,7 +8,7 @@
 
     <!-- Meta for git -->
     <!-- <meta http-equiv="Permissions-Policy" content="interest-cohort=()"> -->
-    <meta http-equiv="Content-Security-Policy" content="interest-cohort=()">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'">
     <meta name="author" content="Gagnant Florian" />
     <meta name="robots" content="noimageindex">
     <meta name="description"
@@ -26,8 +26,10 @@
     <link rel="stylesheet" href="../public/asset/css/style.css" type="text/CSS">
     <link rel="stylesheet" href="../public/asset/css/realizStyle.css" type="text/CSS">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css">
-    <script src="../public/asset/js/datas.js"></script>
+    
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"> -->
+
 
 </head>
 
@@ -92,19 +94,22 @@
 
         <div class="div-btn-realize" id="divBtnRealize">
 
-            <button class="btn-show-realiz">Suivi Séance</button>
-            <button class="btn-show-realiz">Food Easy Home</button>
-            <button class="btn-show-realiz">Mini Projet</button>
+            <!-- <button class="btn-show-realiz" title="One page">One page</button>
+            <button class="btn-show-realiz" title="Suivi Séance">Suivi Séance</button>
+            <button class="btn-show-realiz" title="Food Easy Home">Food Easy Home</button>
+            <button class="btn-show-realiz" title="Mini Projet">Mini Projet</button>
 
-            <button class="btn-show-realiz">Projet Api rest full</button>
-            <button class="btn-show-realiz">Cinema</button>
-            <button class="btn-show-realiz">E-commerce Laravel</button>
+            <button class="btn-show-realiz" title="Projet Api rest full">Projet Api rest full</button>
+            <button class="btn-show-realiz" title="Application multi-platforme">Application multi-platforme</button>
+            <button class="btn-show-realiz" title="E-commerce Laravel">E-commerce Laravel</button> -->
+
+       
 
         </div>
 
         <article class="container shadow-box">
 
-            <h2 class="title-projet-realiz m-2" id="title-projet-realiz">Projet Suivi Séance </h2>
+            <h2 class="title-projet-realiz m-2" id="title-projet-realiz">  </h2>
 
             <div class="row">
 
@@ -114,40 +119,44 @@
 
                     </div>
 
-                    <table class="text-center table-style table-responsive">
-                        <thead>
-                            <tr>
-                                <th colspan="3" class="text-center m-3 p-3">
-                                    Spécifications techniques
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Language</th>
-                                <th>FrameWork</th>
-                                <th><abbr title="SGBD | Système de Gestion de Base de Données">SGBD</abbr> </th>
-                                <th>lien Git</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="" id="table-td-language"></td>
-                                <td class="" id="table-td-framework"></td>
-                                <td id="table-td-sgbd"></td>
-                                <td id="table-td-gitLink"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                  
                 </div>
 
                 <div class="col-lg-5 col-md-10 col-sm-10 m-auto div-wrap-realiz" id="div-realiz-diagrame">
 
                 </div>
+                
+                <table class="text-center table-style table-responsive">
+                    <thead>
+                        <tr>
+                            <th colspan="3" class="text-center m-3 p-3">
+                                Spécifications techniques
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Language</th>
+                            <th>FrameWork</th>
+                            <th><abbr title="SGBD | Système de Gestion de Base de Données">SGBD</abbr> </th>
+                            <th>lien Git</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="" id="table-td-language"></td>
+                            <td class="" id="table-td-framework"></td>
+                            <td id="table-td-sgbd"></td>
+                            <td id="table-td-gitLink"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </article>
     </section>
-
+    <div id="#toast"></div>
     <hr>
+    <script src="../public/asset/js/datas.js"></script>
+    <!-- <script src="../public/asset/js/datasRealisation.js"></script> -->
 
     <script src="../public/asset/js/particles.js"></script>
     <script src="../public/asset/js/app.js"></script>
@@ -157,7 +166,7 @@
     <script src="../public/asset/js/appRealisation.js"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script> -->
     <footer class="bg-dark text-center text-white ">
 
         <!-- Grid container -->
